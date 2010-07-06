@@ -17,7 +17,7 @@ KERNEL_MODULES_DIR?=/system/modules/lib/modules
 BUSYBOX_SRC_FILES = $(shell cat $(LOCAL_PATH)/busybox-$(BUSYBOX_CONFIG).sources) \
 	libbb/android.c
 
-ifeq ($(strip $(CYANOGEN_BIONIC)),true)
+#ifeq ($(strip $(CYANOGEN_BIONIC)),true)
     ifeq ($(TARGET_ARCH),arm)
       BUSYBOX_SRC_FILES += \
         android/libc/arch-arm/syscalls/adjtimex.S \
@@ -27,7 +27,7 @@ ifeq ($(strip $(CYANOGEN_BIONIC)),true)
         android/libc/arch-arm/syscalls/swapoff.S \
         android/libc/arch-arm/syscalls/sysinfo.S
     endif
-endif
+#endif
 
 BUSYBOX_C_INCLUDES = \
 	$(LOCAL_PATH)/include-$(BUSYBOX_CONFIG) \
